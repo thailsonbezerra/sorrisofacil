@@ -1,0 +1,43 @@
+<%- include ("../partials/header.ejs")%>
+<title>Cadastro de Consulta</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">Cadastro de Consulta</h1>
+  <form action="/consulta/save" method="POST">
+    <div class="form-group">
+      <label>Valor:</label>
+      <input type="number" name="valor" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Data:</label>
+      <input type="date" name="data" class="form-control" />
+    </div>
+
+    <label for="">Paciente:</label>
+    <select class="form-control" name="paciente" id="">
+      <% pacientes.forEach(paciente =>{ %>
+      <option value="<%- paciente.id %>"><%- paciente.nome %></option>
+      <% }) %>
+    </select>
+
+    <label for="">Dentista:</label>
+    <select class="form-control" name="dentista" id="">
+      <% dentistas.forEach(dentista =>{ %>
+      <option value="<%- dentista.id %>"><%- dentista.nome %></option>
+      <% }) %>
+    </select>
+
+    <label for="">Procedimento:</label>
+    <select class="form-control" name="procedimento" id="">
+      <% procedimentos.forEach(procedimento =>{ %>
+      <option value="<%- procedimento.id %>"><%- procedimento.nome %></option>
+      <% }) %>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include ("../partials/footer.ejs")%>

@@ -1,0 +1,50 @@
+<%- include ("../partials/header.ejs")%>
+<title>Login</title>
+</head>
+<body>
+
+<div class="login-container">
+  <div class="container">
+    <div
+      class="row justify-content-center align-items-center"
+      style="height: 100vh"
+    >
+      <div class="col-4">
+        <h1 class="text-center">Login</h1>
+        <div class="card">
+          <div class="card-body">
+            <form action="/login" method="POST">
+              <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="text" class="form-control mb-3" name="email" />
+              </div>
+              <div class="form-group">
+                <label for="senha">Senha: </label>
+                <input type="password" class="form-control mb-3" name="senha" />
+              </div>
+              <button type="submit" class="form-control btn btn-primary">
+                Entrar
+              </button>
+            </form>
+
+            <% if(message) { %>
+            <p class="text-center mt-3">
+              <label style="color: Red"><%= message %></label>
+            </p>
+            <%}%>
+
+            <p class="text-center mt-3">Não é usuario?</p>
+            <div class="d-flex justify-content-around">
+              <a href="/paciente/new">Seja um Paciente</a>
+              <a href="/dentista/new">Cadastre Dentista</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <%- include ("../partials/footer.ejs")%>
+</div>
+

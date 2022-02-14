@@ -1,0 +1,35 @@
+<%- include ("../partials/header.ejs")%>
+<title>Novo Recebimento</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">Recebimento</h1>
+  <form action="/recebimento/save" method="POST">
+    <div class="form-group">
+      <label>Data:</label>
+      <input type="date" name="data" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Tipo:</label>
+      <input type="text" name="tipo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Valor Recebido:</label>
+      <input type="text" name="valor" class="form-control" />
+    </div>
+
+    <label for="">Valor da Consulta:</label>
+    <select class="form-control" name="consulta" id="">
+      <% consultas.forEach(consulta =>{ %>
+      <option value="<%- consulta.id %>"><%- consulta.valor %></option>
+
+      <% }) %>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include ("../partials/footer.ejs")%>

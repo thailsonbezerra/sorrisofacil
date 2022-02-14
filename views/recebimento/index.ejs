@@ -1,0 +1,33 @@
+<%- include ("../partials/header.ejs")%>
+<title>Recebimentos</title>
+</head>
+<body>
+<div class="container">
+  <h1>Recebimentos</h1>
+  <a href="/recebimento/new" class="btn btn-primary">Novo Recebimento</a>
+  <table class="table">
+    <h4>Recebimentos</h4>
+    <thead>
+      <tr>
+        <th scope="col">Data</th>
+
+        <th scope="col">Tipo</th>
+        <th scope="col">Valor Recebido</th>
+        <th scope="col">Valor da Consulta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% recebimentos.forEach(recebimento => { %>
+      <tr>
+        <td><%- recebimento.data %></td>
+
+        <td><%- recebimento.tipo %></td>
+        <td><%- recebimento.valor %></td>
+        <td><%- recebimento.consultum.valor %></td>
+      </tr>
+
+      <% })%>
+    </tbody>
+  </table>
+</div>
+<%- include ("../partials/footer.ejs")%>

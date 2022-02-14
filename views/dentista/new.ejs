@@ -1,0 +1,32 @@
+<%- include ("../partials/header.ejs")%>
+<title>Cadastro de Dentista</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">Cadastro de Dentistas</h1>
+  <form action="/dentista/save" method="POST">
+    <div class="form-group">
+      <label>Nome:</label>
+      <input type="text" name="nome" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>CPF:</label>
+      <input type="text" name="cpf" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Especialidade:</label>
+      <input type="text" name="especialidade" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Senha:</label>
+      <input type="password" name="senha" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include ("../partials/footer.ejs")%>

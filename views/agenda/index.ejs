@@ -1,0 +1,33 @@
+<%- include ("../partials/header.ejs")%>
+<title>Agendas</title>
+</head>
+<body>
+<div class="container">
+  <h1>Agendas</h1>
+  <a href="/agenda/new" class="btn btn-primary">Nova Agenda</a>
+  <table class="table">
+    <h4>Agendas</h4>
+    <thead>
+      <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Horario</th>
+        <th scope="col">Tipo</th>
+        <th scope="col">Dentista</th>
+        <th scope="col">Pacientes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% agendas.forEach(agenda => { %>
+      <tr>
+        <td><%- agenda.data %></td>
+        <td><%- agenda.hora %></td>
+        <td><%- agenda.tipo %></td>
+        <td><%- agenda.dentistum.nome %></td>
+        <td><%- agenda.paciente.nome %></td>
+      </tr>
+
+      <% })%>
+    </tbody>
+  </table>
+</div>
+<%- include ("../partials/footer.ejs")%>

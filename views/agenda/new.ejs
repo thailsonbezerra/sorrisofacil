@@ -1,0 +1,45 @@
+<%- include ("../partials/header.ejs")%>
+<title>Cadastro de Agenda</title>
+</head>
+<body>
+<div class="container">
+  <h1 class="text-center">Agenda</h1>
+  <form action="/agenda/save" method="POST">
+    <div class="form-group">
+      <label>Data:</label>
+      <input type="date" name="data" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Hora:</label>
+      <input type="time" name="hora" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <label>Tipo:</label>
+      <select class="form-control" name="tipo" id="">
+        <option value="consulta">Consulta</option>
+        <option value="procedimento">Procedimento</option>
+        <option value="exame">Exame</option>
+      </select>
+    </div>
+
+    <label for="">Dentista:</label>
+    <select class="form-control" name="dentista" id="">
+      <% dentistas.forEach(dentista =>{ %>
+      <option value="<%- dentista.id %>"><%- dentista.nome %></option>
+      <% }) %>
+    </select>
+
+    <label for="">Pacientes:</label>
+    <select class="form-control" name="paciente" id="">
+      <% pacientes.forEach(paciente =>{ %>
+      <option value="<%- paciente.id %>"><%- paciente.nome %></option>
+      <% }) %>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<%- include ("../partials/footer.ejs")%>

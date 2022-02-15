@@ -12,7 +12,7 @@ const Procedimento = require('./models/procedimento')
 
 const connection = require('./database/database')
 
-connection.sync({ force: true })
+//connection.sync({ force: true })
 
 const dentistaController = require('./controllers/dentistaController')
 const consultaController = require('./controllers/consultaController')
